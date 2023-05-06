@@ -228,6 +228,7 @@
     /* border: 1px solid black; */
     display: flex;
     align-items: center;
+    gap: 5px;
 }
 
 
@@ -277,6 +278,13 @@
 .addToCalendardiv>p {
     transition: all .3s ease;
 }
+
+@media(max-width:376px) {
+    .addToCalendardiv>p {
+        font-size: 13px;
+    }
+}
+
 
 .addToCalendardiv:hover>p {
     transform: translateX(-5px);
