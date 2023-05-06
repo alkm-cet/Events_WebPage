@@ -1,0 +1,25 @@
+.MainPage {
+    /* border: 1px solid black; */
+    width: 100%;
+    height: auto;
+    padding: 50px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+@media(max-width:1078px) {
+    .MainPage {
+        padding: 50px 10px;
+    }
+}
+@media(max-width:600px) {
+    .MainPage {
+        padding: 20px 10px;
+        gap: 0;
+    }
+}
+

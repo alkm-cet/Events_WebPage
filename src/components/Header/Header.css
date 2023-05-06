@@ -1,0 +1,21 @@
+.Header {
+    width: 100%;
+    height: auto;
+    /* border: 1px solid black; */
+    padding: 20px 0px 0px 0px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+
+    font-family: 'Galano-Grotesque-Bold';
+    font-weight: 700;
+    font-size: 32px;
+}
+
+@media(max-width:600px) {
+    .Header>img {
+        display: none;
+    }
+}
