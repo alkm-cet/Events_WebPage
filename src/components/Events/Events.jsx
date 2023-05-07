@@ -7,25 +7,13 @@ import { DataContext } from '../../context/DataContext';
 
 function Events() {
 
-    const { eventData,
-        setEventData,
+    const {
+        eventData,
         handleBgColor,
         toggleAddToCalendar,
-        filterPopup,
-        setFilterPopup,
-        filterBox,
-        setFilterBox,
-        handlePopup,
-        handleFilterBox,
         category,
-        setCategory,
-        handleCategory,
         search,
-        setSearch,
-        handleSearch,
         filter,
-        setFilter,
-        handleFilter,
         dateFilter } = useContext(DataContext)
 
     return (

@@ -269,3 +269,14 @@
 .popupContainer>button:hover {
     transform: translateX(-3px);
 }
+
+.notSelected {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+.selected {
+    background-color: #FF0D87;
+}

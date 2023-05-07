@@ -9,24 +9,16 @@ import { DataContext } from '../../context/DataContext';
 
 function Navbar() {
 
-    const { filterPopup,
+    const {
+        filterPopup,
         setFilterPopup,
-        filterBox,
-        setFilterBox,
         handlePopup,
-        category,
-        setCategory,
         handleCategory,
-        search,
-        setSearch,
         handleSearch,
-        filter,
-        setFilter,
         handleFilter,
-        dateFilter,
-        setDateFilter,
-        handleDateFilter } = useContext(DataContext)
-
+        handleDateFilter,
+        checkedBoxes,
+        handleRemoveFilter } = useContext(DataContext)
 
 
     return (
@@ -65,46 +57,64 @@ function Navbar() {
 
                                 <div className="popupContainer">
                                     <h3>Etkinlik Mekanı</h3>
-                                    <button onClick={handleFilter} value=''>Filtreleri Kaldır</button>
-                                    <button onClick={handleFilter} value='Maximum UNIQ Hall'>
-                                        <span class="material-symbols-outlined">
-                                            check_box_outline_blank
-                                        </span>
-                                        Maximum Uniq Hall</button>
-                                    <button onClick={handleFilter} value='Maximum UNIQ Box'>
-                                        <span class="material-symbols-outlined">
-                                            check_box_outline_blank
-                                        </span>
-                                        Maximum Uniq Box</button>
-                                    <button onClick={handleFilter} value='Maximum UNIQ Lounge'>
-                                        <span class="material-symbols-outlined">
-                                            check_box_outline_blank
-                                        </span>
-                                        Maximum Uniq Lounge</button>
-                                    <button onClick={handleFilter} value='Maximum UNIQ Açıkhava'>
-                                        <span class="material-symbols-outlined">
-                                            check_box_outline_blank
-                                        </span>
-                                        Maximum Uniq Açıkava</button>
+                                    <button onClick={handleRemoveFilter}>Filtreleri Kaldır</button>
 
+                                    <button id='1' onClick={handleFilter} value='Maximum UNIQ Hall'>
+                                        <span style={checkedBoxes['1'] ? { backgroundColor: '#FF0D87', color: 'white' } : { color: 'black' }} className="material-symbols-outlined">
+                                            {checkedBoxes['1'] ? 'check_box' : 'check_box_outline_blank'}
+                                        </span>
+                                        Maximum Uniq Hall
+                                    </button>
 
+                                    <button id='2' onClick={handleFilter} value='Maximum UNIQ Hall'>
+                                        <span style={checkedBoxes['2'] ? { backgroundColor: '#FF0D87', color: 'white' } : { color: 'black' }} className="material-symbols-outlined">
+                                            {checkedBoxes['2'] ? 'check_box' : 'check_box_outline_blank'}
+                                        </span>
+                                        Maximum Uniq Box
+                                    </button>
+
+                                    <button id='3' onClick={handleFilter} value='Maximum UNIQ Hall'>
+                                        <span style={checkedBoxes['3'] ? { backgroundColor: '#FF0D87', color: 'white' } : { color: 'black' }} className="material-symbols-outlined">
+                                            {checkedBoxes['3'] ? 'check_box' : 'check_box_outline_blank'}
+                                        </span>
+                                        Maximum Uniq Lounge
+                                    </button>
+
+                                    <button id='4' onClick={handleFilter} value='Maximum UNIQ Hall'>
+                                        <span style={checkedBoxes['4'] ? { backgroundColor: '#FF0D87', color: 'white' } : { color: 'black' }} className="material-symbols-outlined">
+                                            {checkedBoxes['4'] ? 'check_box' : 'check_box_outline_blank'}
+                                        </span>
+                                        Maximum Uniq Açıkava
+                                    </button>
 
                                     <h3>Etkinlik Tarihi</h3>
 
+                                    <button id='5' onClick={handleDateFilter} value={'true'}>
+                                        <span style={checkedBoxes['5'] ? { backgroundColor: '#FF0D87', color: 'white' } : { color: 'black' }} className="material-symbols-outlined">
+                                            {checkedBoxes['5'] ? 'check_box' : 'check_box_outline_blank'}
+                                        </span>
+                                        Güncel Ekinlikler
+                                    </button>
+
+                                    <button id='6' onClick={handleDateFilter} value={'false'}>
+                                        <span style={checkedBoxes['6'] ? { backgroundColor: '#FF0D87', color: 'white' } : { color: 'black' }} className="material-symbols-outlined">
+                                            {checkedBoxes['6'] ? 'check_box' : 'check_box_outline_blank'}
+                                        </span>
+                                        Geçmiş Etkinlikler
+                                    </button>
+                                    {/* 
                                     <button onClick={handleDateFilter} value={'true'}>
-                                        <span class="material-symbols-outlined">
+                                        <span className="material-symbols-outlined">
                                             check_box_outline_blank
                                         </span>
                                         Güncel Ekinlikler</button>
                                     <button onClick={handleDateFilter} value={'false'}>
-                                        <span class="material-symbols-outlined">
+                                        <span className="material-symbols-outlined">
                                             check_box_outline_blank
                                         </span>
-                                        Geçmiş Etkinlikler</button>
+                                        Geçmiş Etkinlikler</button> */}
                                 </div>
                             </>
-
-
                             : null
                     }
                 </div>

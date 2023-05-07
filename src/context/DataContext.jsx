@@ -39,30 +39,59 @@ function DataContextProvider({ children }) {
     const [search, setSearch] = useState('');
     const [filter, setFilter] = useState('');
     const [dateFilter, setDateFilter] = useState('')
+    const [checkedBoxes, setCheckedBoxes] = useState({});
 
     const handlePopup = () => {
         setFilterPopup(prev => !prev)
     }
 
     const handleCategory = (e) => {
-        setCategory(e.target.value)
+        setCategory(e.target.value);
+        setFilter('');
+        setCheckedBoxes({});
     }
 
     const handleSearch = (e) => {
         setSearch(e.target.value)
     }
 
-    const handleFilter = (e) => {
-        setFilter(e.target.value)
-        setDateFilter('')
-        setFilterPopup(false)
+    const handleRemoveFilter = (e) => {
+        setFilter(e.target.value);
+        setDateFilter('');
+        setFilterPopup(false);
+        setCheckedBoxes({});
     }
 
     const handleDateFilter = (e) => {
-        setFilterPopup(false)
-        setDateFilter(e.target.value)
+        setFilterPopup(false);
+        setDateFilter(e.target.value);
+
+        const buttonId = e.target.id;
+        const isChecked = checkedBoxes[buttonId];
+
+        setCheckedBoxes({
+            ...checkedBoxes,
+            [buttonId]: !isChecked
+        });
     }
 
+    //---------------------
+
+
+
+    const handleFilter = (e) => {
+        setFilter(e.target.value);
+        setDateFilter('');
+        setFilterPopup(false);
+
+        const buttonId = e.target.id;
+        const isChecked = checkedBoxes[buttonId];
+
+        setCheckedBoxes({
+            ...checkedBoxes,
+            [buttonId]: !isChecked
+        });
+    };
 
     return (
         <DataContext.Provider
@@ -85,7 +114,9 @@ function DataContextProvider({ children }) {
                 handleFilter,
                 dateFilter,
                 setDateFilter,
-                handleDateFilter
+                handleDateFilter,
+                checkedBoxes,
+                handleRemoveFilter
             }}
         >
             {children}
