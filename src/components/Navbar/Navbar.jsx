@@ -66,21 +66,21 @@ function Navbar() {
                                         Maximum Uniq Hall
                                     </button>
 
-                                    <button id='2' onClick={handleFilter} value='Maximum UNIQ Hall'>
+                                    <button id='2' onClick={handleFilter} value='Maximum UNIQ Box'>
                                         <span style={checkedBoxes['2'] ? { backgroundColor: '#FF0D87', color: 'white' } : { color: 'black' }} className="material-symbols-outlined">
                                             {checkedBoxes['2'] ? 'check_box' : 'check_box_outline_blank'}
                                         </span>
                                         Maximum Uniq Box
                                     </button>
 
-                                    <button id='3' onClick={handleFilter} value='Maximum UNIQ Hall'>
+                                    <button id='3' onClick={handleFilter} value='Maximum UNIQ Lounge'>
                                         <span style={checkedBoxes['3'] ? { backgroundColor: '#FF0D87', color: 'white' } : { color: 'black' }} className="material-symbols-outlined">
                                             {checkedBoxes['3'] ? 'check_box' : 'check_box_outline_blank'}
                                         </span>
                                         Maximum Uniq Lounge
                                     </button>
 
-                                    <button id='4' onClick={handleFilter} value='Maximum UNIQ Hall'>
+                                    <button id='4' onClick={handleFilter} value='Maximum UNIQ Açıkhava'>
                                         <span style={checkedBoxes['4'] ? { backgroundColor: '#FF0D87', color: 'white' } : { color: 'black' }} className="material-symbols-outlined">
                                             {checkedBoxes['4'] ? 'check_box' : 'check_box_outline_blank'}
                                         </span>
